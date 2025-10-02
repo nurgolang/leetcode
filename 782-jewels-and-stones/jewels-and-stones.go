@@ -1,11 +1,15 @@
 func numJewelsInStones(jewels string, stones string) int {
-    var res int
+    jewelSet := make(map[rune]bool)
+
     for _, jewel := range jewels {
-        for _, stone := range stones {
-            if stone == jewel {
-                res++
-            } 
+        jewelSet[jewel] = true   
+    }
+
+    var count int
+    for _, stone := range stones {
+        if jewelSet[stone] {
+            count++
         }
     }
-    return res
+    return count 
 }
