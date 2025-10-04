@@ -1,5 +1,3 @@
-import "strings"
-
 func countConsistentStrings(allowed string, words []string) int {
 	// create an empty map to store allowed characters
 	allowedChars := make(map[rune]struct{})
