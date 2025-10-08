@@ -1,12 +1,7 @@
 func differenceOfSums(n int, m int) int {
-    var divCount int
-    var indivCount int
-	for i := 1; i <= n; i++ {
-		if i%m == 0 {
-            divCount += i
-		} else {
-            indivCount += i
-        }
-	}
-    return indivCount - divCount
+   // gauss mass
+   totalSum := (n * (n + 1)) / 2
+   k := n / m
+   divSum := ((k * (k + 1)) / 2) * m
+   return totalSum - 2 * divSum
 }
