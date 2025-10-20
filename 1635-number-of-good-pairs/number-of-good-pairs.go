@@ -1,11 +1,13 @@
+// Gauss formula solution
 func numIdenticalPairs(nums []int) int {
-    var cnt int
-	for i := 0; i < len(nums)-1; i++ {
-		for j := i + 1; j < len(nums); j++ {
-            if nums[i] == nums[j] {
-                cnt++
-            } 
-		}
+	counts := make(map[int]int)
+	for _, num := range nums {
+       counts[num]++
 	}
-    return cnt
+
+    var totalPairs int
+    for _, freq := range counts{
+        totalPairs += (freq * (freq - 1)) / 2
+    }
+    return totalPairs
 }
