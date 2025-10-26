@@ -1,9 +1,7 @@
 func alternatingSum(nums []int) int {
-	var res int
-    multiplier := 1
-	for _, num := range nums {
-        res += num * multiplier
-        multiplier *= -1
+	sums := make([]int, 2)
+	for i, num := range nums {
+        sums[i%2] += num
 	}
-    return res
+    return sums[0] - sums[1]
 }
